@@ -5,6 +5,7 @@ dirs=[
      "data_given",
      os.path.join("data", "raw") ,
      os.path.join("data", "processed"),
+     "report",
      "notebook",
      "saved_models",
      "src"
@@ -23,5 +24,8 @@ files=[
       ]
 
 for file in files:
-    with open(file,"w") as f:
-        pass
+    if not (os.path.exists(file)):        
+        with open(file,"w") as f:
+            pass
+    else:
+        print(f"{file} is present")

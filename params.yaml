@@ -7,11 +7,11 @@ data_source:
   s3_source: /home/shubham/MLOPSday2/simple_app/data_given/winequality.csv
 
 load_data:
-  raw_dataset_csv: data/raw/winequality.csv
+  raw_dataset_csv: /home/shubham/MLOPSday2/MLOPSday2/simple_app/data/raw/winequality.csv
 
 split_data:
-  train_path: data/processed/train_winequality.csv
-  test_path: data/processed/test_winequality.csv
+  train_path: /home/shubham/MLOPSday2/simple_app/data/processed/train_winequality.csv
+  test_path: /home/shubham/MLOPSday2/simple_app/data/processed/test_winequality.csv
   test_size: 0.2
 
 estimators:
@@ -21,10 +21,10 @@ estimators:
       # l1_ratio: 0.89
       alpha: 0.9
       l1_ratio: 0.4
-model_dir: saved_models
+model_dir: /home/shubham/MLOPSday2/simple_app/saved_models
 
 reports:
-  params: report/params.json
-  scores: report/scores.json
+  params: /home/shubham/MLOPSday2/simple_app/report/params.json
+  scores: /home/shubham/MLOPSday2/simple_app/report/scores.json
 
 webapp_model_dir: prediction_service/model/model.joblib
