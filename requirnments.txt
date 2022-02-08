@@ -1,7 +1,7 @@
 #local package install
 -e .
 
-#thid party packages
+##thid party packages
 dvc
 dvc[gdrive]
 sklearn
