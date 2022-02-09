@@ -7,7 +7,7 @@ data_source:
   s3_source: /home/shubham/MLOPSday2/simple_app/data_given/winequality.csv
 
 load_data:
-  raw_dataset_csv: /home/shubham/MLOPSday2/MLOPSday2/simple_app/data/raw/winequality.csv
+  raw_dataset_csv: /home/shubham/MLOPSday2/simple_app/data/raw/winequality.csv
 
 split_data:
   train_path: /home/shubham/MLOPSday2/simple_app/data/processed/train_winequality.csv
@@ -28,3 +28,10 @@ reports:
   scores: /home/shubham/MLOPSday2/simple_app/report/scores.json
 
 webapp_model_dir: prediction_service/model/model.joblib
+
+mlflow_config:
+  artifacts_dir: artifacts
+  experiment_name: ElasticNet regression
+  run_name: mlops
+  registered_model_name: ElasticNetWineModelShubham
+  remote_server_uri: http://0.0.0.0:5000
