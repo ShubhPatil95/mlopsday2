@@ -16,6 +16,8 @@ import joblib
 import json
 import mlflow
 
+
+
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
     mae = mean_absolute_error(actual, pred)
@@ -48,7 +50,7 @@ def train_and_evaluate(config_path):
     remote_server_uri = mlflow_config["remote_server_uri"]
 
     mlflow.set_tracking_uri(remote_server_uri)
-
+    
     mlflow.set_experiment(mlflow_config["experiment_name"])
 
     with mlflow.start_run(run_name=mlflow_config["run_name"]) as mlops_run:
@@ -69,20 +71,17 @@ def train_and_evaluate(config_path):
         mlflow.log_metric("mae", mae)
         mlflow.log_metric("r2", r2)
 
-        tracking_url_type_store = urlparse(mlflow.get_artifact_uri()).scheme
+        # tracking_url_type_store = urlparse(mlflow.get_artifact_uri()).scheme
 
-        if tracking_url_type_store != "file":
-            mlflow.sklearn.log_model(
-                lr, 
-                "model", 
-                registered_model_name=mlflow_config["registered_model_name"])
-        else:
-            mlflow.sklearn.load_model(lr, "model")
+        # if tracking_url_type_store != "file":
+        #     mlflow.sklearn.log_model(
+        #         lr, 
+        #         "model", 
+        #         registered_model_name=mlflow_config["registered_model_name"])
+        # else:
+        #     mlflow.sklearn.load_model(lr, "model")
         
-        print("ok")
  
-
-
 if __name__=="__main__":
     args = argparse.ArgumentParser()
     args.add_argument("--config", default="/home/shubham/MLOPSday2/simple_app/params.yaml")

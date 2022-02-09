@@ -1,0 +1,15 @@
+artifact_uri: ./mlruns/7/4b74e2b5c4b94880b3158a35591add77/artifacts
+end_time: 1644412199418
+entry_point_name: ''
+experiment_id: '7'
+lifecycle_stage: active
+name: ''
+run_id: 4b74e2b5c4b94880b3158a35591add77
+run_uuid: 4b74e2b5c4b94880b3158a35591add77
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1644412199385
+status: 3
+tags: []
+user_id: shubham
